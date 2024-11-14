@@ -56,6 +56,13 @@
                     navMenu.classList.remove('open');
                 });
             });
+
+          // Close the menu when clicking outside of it
+    document.addEventListener('click', (event) => {
+        if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+            navMenu.classList.remove('open'); // Close the menu
+        }
+    });
         </script>
         
     </header>
