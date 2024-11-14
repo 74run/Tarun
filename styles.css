@@ -355,4 +355,66 @@ footer i {
     color: #cbd5e0; /* Softer light color for secondary text */
 }
 
+#menu-toggle {
+    font-size: 2rem; /* Larger icon */
+    padding: 0.75rem; /* Extra padding around the icon */
+    border-radius: 0.5rem; /* Rounded corners */
+}
+
+/* Initial hidden state for the mobile menu */
+#nav-menu {
+    transform: translateX(100%); /* Hide the menu off-screen to the right */
+}
+
+/* Style for the menu when visible */
+#nav-menu.open {
+    transform: translateX(0); /* Slide the menu into view */
+}
+
+/* Transition effect for smooth sliding */
+#nav-menu {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Align items vertically in mobile view */
+#nav-links {
+    flex-direction: column;
+}
+
+/* Ensures nav links are horizontal in desktop view */
+@media (min-width: 1024px) {
+    #nav-menu {
+        transform: none;
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+    }
+    #nav-links {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+
+
+/* Timeline responsive styling */
+@media (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    .timeline-item img {
+        margin-bottom: 1rem;
+    }
+    .right-timeline .order-1,
+    .left-timeline .order-1 {
+        order: 1;
+    }
+    .right-timeline .order-1 .timeline-item,
+    .left-timeline .order-1 .timeline-item {
+        width: 100%;
+    }
+}
+
 
