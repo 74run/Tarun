@@ -1,41 +1,73 @@
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
- 
+  
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <link rel="icon" type="icon" href="logot.png">
+        <title>Tarun Janapati</title>
+         <!-- Favicon link -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+
+    
 </head>
 <body class="bg-gray-100 text-gray-800">
-<header class="bg-gray-900 shadow sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-6 flex justify-between items-center px-4 lg:px-20">
-        <h1 class="text-2xl font-bold text-white">Tarun Janapati</h1>
-        <nav>
-            <ul class="flex space-x-4">
-                <li><a class="nav-link active" href="#home">Home</a></li>
-                <li><a class="nav-link" href="#about">About</a></li>
-                <li><a class="nav-link" href="#experience">Experience</a></li>
-                <li><a class="nav-link" href="#projects">Projects</a></li>
-                <li><a class="nav-link" href="#education">Education</a></li>
-                <li><a class="nav-link" href="#skills">Skills</a></li>
-                <li><a class="nav-link" href="#resume">Resume</a></li>
-               
-                <li><button class="nav-link" id="dark-mode-toggle"><i class="fas fa-moon"></i></button></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    <header class="bg-gray-900 shadow sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center px-4 lg:px-20">
+            <h1 class="text-2xl font-bold text-white">Tarun Janapati</h1>
+            
+            <!-- Toggle button for mobile view -->
+            <button id="menu-toggle" class="lg:hidden text-white focus:outline-none p-3 text-3xl">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- Slide-in Navigation Links -->
+            <div id="nav-menu" class="fixed top-0 right-0 w-64 h-full bg-gray-900 text-white transform translate-x-full transition-transform duration-300 ease-in-out lg:static lg:transform-none lg:flex lg:space-x-4">
+                <ul id="nav-links" class="flex flex-col space-y-4 p-6 lg:flex-row lg:space-y-0 lg:space-x-4">
+                    <li><a class="nav-link active" href="#home">Home</a></li>
+                    <li><a class="nav-link" href="#about">About</a></li>
+                    <li><a class="nav-link" href="#experience">Experience</a></li>
+                    <li><a class="nav-link" href="#projects">Projects</a></li>
+                    <li><a class="nav-link" href="#education">Education</a></li>
+                    <li><a class="nav-link" href="#skills">Skills</a></li>
+                    <li><a class="nav-link" href="#resume">Resume</a></li>
+                    <li><button class="nav-link" id="dark-mode-toggle"><i class="fas fa-moon"></i></button></li>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+            // Select the menu toggle button and the nav menu container
+            const menuToggle = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            const navLinks = document.querySelectorAll('#nav-links a');
+        
+            // Toggle the 'open' class on the navMenu when the menu button is clicked
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('open');
+            });
+        
+            // Close the menu when any link inside the menu is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('open');
+                });
+            });
+        </script>
+        
+    </header>
+    
+    
 
 <section class="bg-cover bg-center h-screen relative fade-in" id="home" style="background-image: url('https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBvcnRmb2xpbyUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D');">
     <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-70"></div>
     <div class="container mx-auto h-full flex items-center justify-center relative z-10">
         <div class="text-center text-white">
             <div class="flex justify-center mb-8">
-                <img alt="Portrait of the developer" class="rounded-full w-48 h-48 shadow-lg" src="pro-1.JPG" />
+                <img alt="Portrait of the developer" class="rounded-full w-48 h-48 shadow-lg" src="pro-1.jpg" />
             </div>
         
             <h2 class="text-4xl md:text-6xl font-bold mb-4 typing" id="typing-text">Tarun Janapati</h2>
@@ -54,7 +86,7 @@
     <div class="container mx-auto px-4">
         <h2 class="text-4xl font-bold mb-8 text-center text-gray-900">About Me</h2>
         <div class="flex flex-col md:flex-row items-center">
-            <img alt="Portrait of the developer" class="rounded-full w-48 h-48 mb-8 md:mb-0 md:mr-8 shadow-lg" src="pro-1.JPG" />
+            <img alt="Portrait of the developer" class="rounded-full w-48 h-48 mb-8 md:mb-0 md:mr-8 shadow-lg" src="pro-1.jpg" />
             <p class="text-lg leading-relaxed">I am a passionate developer with experience in creating dynamic and responsive web applications. I love to learn new technologies and improve my skills continuously. My expertise spans across data analysis, data science, and full stack development, making me a versatile asset in any tech team.</p>
         </div>
     </div>
@@ -64,18 +96,19 @@
     <div class="container mx-auto px-4">
         <h2 class="text-4xl font-bold mb-8 text-center text-gray-900">Experience</h2>
         <div class="relative">
-            <div class="border-l-4 border-teal-500 absolute h-full left-1/2 transform -translate-x-1/2"></div>
-            
-            <!-- Experience Item 1 -->
-            <div class="mb-8 flex justify-between items-center w-full right-timeline">
-                <div class="order-1 w-5/12"></div>
-                <div class="order-1 w-5/12 px-4 py-4 timeline-item bg-white rounded-lg shadow-lg p-6 flex items-center">
-                    <!-- Company Logo on Left Side -->
-                    <div class="w-1/4 flex justify-center">
+            <!-- Vertical Line Centered for Larger Screens Only -->
+            <div class="border-l-4 border-teal-500 absolute h-full left-1/2 transform -translate-x-1/2 hidden md:block"></div>
+
+            <!-- Experience Item 1 (Right Side) -->
+            <div class="mb-8 flex flex-col md:flex-row items-center w-full">
+                <!-- Empty Placeholder for Positioning (Desktop Only) -->
+                <div class="order-1 w-full md:w-5/12 hidden md:block"></div>
+                <!-- Timeline Content Aligned Right -->
+                <div class="order-1 w-full md:w-5/12 md:ml-auto px-4 py-4 bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/4 flex justify-center mb-4 md:mb-0">
                         <img src="HOG.jfif" alt="The Haven of Grace Logo" class="w-16 h-16 rounded-full shadow-md">
                     </div>
-                    <!-- Text Content on Right Side -->
-                    <div class="w-3/4 pl-4 text-left">
+                    <div class="w-full md:w-3/4 text-center md:text-left">
                         <p class="mb-2 text-teal-500">May 2024 – August 2024</p>
                         <h3 class="font-bold text-lg mb-1">The Haven of Grace</h3>
                         <p class="font-semibold mb-2">Full-Stack Developer</p>
@@ -83,35 +116,35 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Experience Item 2 -->
-            <div class="mb-8 flex justify-between items-center w-full left-timeline">
-                <div class="order-1 w-5/12 px-4 py-4 timeline-item bg-white rounded-lg shadow-lg p-6 flex items-center">
-                    <!-- Company Logo on Left Side -->
-                    <div class="w-1/4 flex justify-center">
+
+            <!-- Experience Item 2 (Left Side) -->
+            <div class="mb-8 flex flex-col md:flex-row items-center w-full">
+                <!-- Timeline Content Aligned Left -->
+                <div class="order-1 w-full md:w-5/12 px-4 py-4 bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/4 flex justify-center mb-4 md:mb-0">
                         <img src="SLU.png" alt="Simon Recreation Center Logo" class="w-16 h-16 rounded-full shadow-md">
                     </div>
-                    <!-- Text Content on Right Side -->
-                    <div class="w-3/4 pl-4 text-left">
+                    <div class="w-full md:w-3/4 text-center md:text-left">
                         <p class="mb-2 text-teal-500">September 2024 – Present</p>
                         <h3 class="font-bold text-lg mb-1">Simon Recreation Center</h3>
                         <p class="font-semibold mb-2">Operations Assistant Student Worker</p>
                         <p>Support daily operations, including equipment maintenance, check-in, customer service, and special event setup, ensuring a safe and welcoming environment for patrons.</p>
                     </div>
                 </div>
-                <div class="order-1 w-5/12"></div>
+                <!-- Empty Placeholder for Positioning (Desktop Only) -->
+                <div class="order-1 w-full md:w-5/12 hidden md:block"></div>
             </div>
 
-            <!-- Experience Item 3 -->
-            <div class="mb-8 flex justify-between items-center w-full right-timeline">
-                <div class="order-1 w-5/12"></div>
-                <div class="order-1 w-5/12 px-4 py-4 timeline-item bg-white rounded-lg shadow-lg p-6 flex items-center">
-                    <!-- Company Logo on Left Side -->
-                    <div class="w-1/4 flex justify-center">
+            <!-- Experience Item 3 (Right Side) -->
+            <div class="mb-8 flex flex-col md:flex-row items-center w-full">
+                <!-- Empty Placeholder for Positioning (Desktop Only) -->
+                <div class="order-1 w-full md:w-5/12 hidden md:block"></div>
+                <!-- Timeline Content Aligned Right -->
+                <div class="order-1 w-full md:w-5/12 md:ml-auto px-4 py-4 bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/4 flex justify-center mb-4 md:mb-0">
                         <img src="Saarloha.png" alt="Saarloha Advanced Materials Pvt Ltd Logo" class="w-16 h-16 rounded-full shadow-md">
                     </div>
-                    <!-- Text Content on Right Side -->
-                    <div class="w-3/4 pl-4 text-left">
+                    <div class="w-full md:w-3/4 text-center md:text-left">
                         <p class="mb-2 text-teal-500">July 2022 – September 2022</p>
                         <h3 class="font-bold text-lg mb-1">Saarloha Advanced Materials Pvt Ltd</h3>
                         <p class="font-semibold mb-2">Graduate Engineer Trainee</p>
@@ -122,7 +155,6 @@
         </div>
     </div>
 </section>
-
 
   
 <section class="py-16 bg-gray-200 px-4 lg:px-20" id="projects">
@@ -193,19 +225,19 @@
     <div class="container mx-auto px-4">
         <h2 class="text-4xl font-bold mb-8 text-center text-gray-900">Education</h2>
         <div class="relative">
-            <div class="border-l-4 border-teal-500 absolute h-full left-1/2 transform -translate-x-1/2"></div>
-            
-            <!-- Timeline Item 1 -->
-            <div class="mb-8 flex justify-between items-center w-full right-timeline">
-                <div class="order-1 w-5/12"></div>
-                <div class="order-1 w-5/12 px-4 py-4 timeline-item bg-white rounded-lg shadow-lg p-6 flex items-center">
-                    <!-- University Logo on Left Side -->
-                    <div class="w-1/4 flex justify-center">
-                        
-                        <img src="SLU.png" alt="State University Logo" class="w-20 h-20 rounded-full shadow-md">
+            <!-- Vertical Line Centered for Larger Screens Only -->
+            <div class="border-l-4 border-teal-500 absolute h-full left-1/2 transform -translate-x-1/2 hidden md:block"></div>
+
+            <!-- Education Item 1 (Right Side) -->
+            <div class="mb-8 flex flex-col md:flex-row items-center w-full">
+                <!-- Empty Placeholder for Positioning (Desktop Only) -->
+                <div class="order-1 w-full md:w-5/12 hidden md:block"></div>
+                <!-- Timeline Content Aligned Right -->
+                <div class="order-1 w-full md:w-5/12 md:ml-auto px-4 py-4 bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/4 flex justify-center mb-4 md:mb-0">
+                        <img src="SLU.png" alt="Saint Louis University Logo" class="w-20 h-20 rounded-full shadow-md">
                     </div>
-                    <!-- Text Content on Right Side -->
-                    <div class="w-3/4 pl-4 text-left">
+                    <div class="w-full md:w-3/4 text-center md:text-left">
                         <p class="mb-2 text-teal-500">2023 - 2025</p>
                         <h3 class="font-bold text-lg mb-1">Saint Louis University</h3>
                         <p class="font-semibold mb-2">Master of Science in Analytics</p>
@@ -213,29 +245,27 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Timeline Item 2 -->
-            <div class="mb-8 flex justify-between items-center w-full left-timeline">
-                <div class="order-1 w-5/12 px-4 py-4 timeline-item bg-white rounded-lg shadow-lg p-6 flex items-center">
-                    <!-- University Logo on Left Side -->
-                    <div class="w-1/4 flex justify-center">
-                        <img src="VNIT_logo.jpeg" alt="University of Technology Logo" >
+
+            <!-- Education Item 2 (Left Side) -->
+            <div class="mb-8 flex flex-col md:flex-row items-center w-full">
+                <!-- Timeline Content Aligned Left -->
+                <div class="order-1 w-full md:w-5/12 px-4 py-4 bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/4 flex justify-center mb-4 md:mb-0">
+                        <img src="VNIT_logo.jpeg" alt="VNIT Logo" class="w-20 h-20 rounded-full shadow-md">
                     </div>
-                    <!-- Text Content on Right Side -->
-                    <div class="w-3/4 pl-4 text-left">
+                    <div class="w-full md:w-3/4 text-center md:text-left">
                         <p class="mb-2 text-teal-500">2018 - 2022</p>
-                        <h3 class="font-bold text-lg mb-1">Visvesvaraya National Intitute of Technology</h3>
+                        <h3 class="font-bold text-lg mb-1">Visvesvaraya National Institute of Technology</h3>
                         <p class="font-semibold mb-2">Bachelor of Technology in Mechanical Engineering</p>
                         <p>Focused on software development, algorithms, and data structures.</p>
                     </div>
                 </div>
-                <div class="order-1 w-5/12"></div>
+                <!-- Empty Placeholder for Positioning (Desktop Only) -->
+                <div class="order-1 w-full md:w-5/12 hidden md:block"></div>
             </div>
         </div>
     </div>
 </section>
-
-
 
 <section class="py-16 bg-gray-100 px-4 lg:px-24" id="skills">
     <div class="container mx-auto px-4">
@@ -384,7 +414,7 @@
             
             <!-- PDF Embed for Resume Preview -->
             <div class="mb-6">
-                <iframe src="Tarun_Janapati_Resume.pdf" width="100%" height="600px" class="rounded-lg shadow-lg">
+                <iframe src="Tarun_Janapati_Resume.pdf" width="100%" height="600px" class="rounded-lg shadow-lg" allow="autoplay">
                     Your browser does not support iframes. 
                 </iframe>
             </div>
